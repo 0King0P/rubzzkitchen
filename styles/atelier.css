@@ -749,7 +749,7 @@ textarea {
   display: grid;
   grid-template-columns: 76px minmax(0, 1fr) auto;
   gap: 1.25rem 1.75rem;
-  align-items: start;
+  align-items: center;
   padding-block: 1.4rem;
   border-bottom: 1px solid var(--border-subtle);
 }

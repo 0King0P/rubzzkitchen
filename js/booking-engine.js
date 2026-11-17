@@ -339,7 +339,7 @@ function injectBookingStyles() {
       font-size: 0.9rem;
       line-height: 1.55;
     }
-    .rk-ledger-row {
+    .rk-bag-ledger-row {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 12px;
@@ -1202,7 +1202,7 @@ export function initBookingEngine({ mountBooking, mountDrawer, kitchenData }) {
                           ? "Custom Quote"
                           : formatMoney(line.unitPrice * line.qty);
                       return `
-                        <div class="rk-ledger-row">
+                        <div class="rk-bag-ledger-row">
                           <div>
                             <p class="rk-ledger-item-title">${escapeHtml(line.title)}</p>
                             ${line.subtitle ? `<p class="rk-ledger-item-sub">${escapeHtml(line.subtitle)}</p>` : ""}
@@ -1303,7 +1303,7 @@ export function initBookingEngine({ mountBooking, mountDrawer, kitchenData }) {
                         const lineSub =
                           l.isCustomQuote || l.unitPrice === null ? "Custom Quote" : formatMoney(l.unitPrice * l.qty);
                         return `
-                          <div class="rk-ledger-row">
+                          <div class="rk-bag-ledger-row">
                             <div>
                               <p class="rk-ledger-item-title">${escapeHtml(l.title)}</p>
                               ${l.subtitle ? `<p class="rk-ledger-item-sub">${escapeHtml(l.subtitle)}</p>` : ""}

@@ -9,10 +9,10 @@ import {
   PORTFOLIO_EVENTS,
   GENERATED_PLATES,
   FAQ_ITEMS,
-} from '../data/kitchen-data.js?v=1';
-import { initBookingEngine } from './booking-engine.js?v=1';
-import { initCateringArchitect } from './catering-architect.js?v=1';
-import { initClientReviewMode } from './client-review-mode.js?v=1';
+} from '../data/kitchen-data.js?v=2';
+import { initBookingEngine } from './booking-engine.js?v=2';
+import { initCateringArchitect } from './catering-architect.js?v=2';
+import { initClientReviewMode } from './client-review-mode.js?v=2';
 
 const THEME_STORAGE_KEY = 'rubzzkitchen_theme_v1';
 

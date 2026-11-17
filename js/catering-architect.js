@@ -200,9 +200,14 @@ function injectArchitectStyles() {
     .rk-bp-total-bar {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       padding-top: 8px;
       gap: 12px;
+    }
+    .rk-bp-total-bar .rk-btn-primary,
+    [data-arch-load] {
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Grazing Scenography Studio */
@@ -326,6 +331,17 @@ function injectArchitectStyles() {
       }
       .rk-frz-row {
         padding: 14px 16px;
+      }
+    }
+    @media (max-width: 560px) {
+      .rk-bp-total-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .rk-bp-total-bar .rk-btn-primary,
+      [data-arch-load] {
+        white-space: normal;
+        width: 100%;
       }
     }
   `;
