@@ -2,6 +2,7 @@ const STORAGE_KEY = "rubzzkitchen_review_v1";
 
 const CHECKLIST_ITEMS = [
   { id: "menu-pricing", label: "Menu & Tray Pricing Accuracy" },
+  { id: "original-photography", label: "100% Original Enhanced RubzzKitchen Photography" },
   { id: "grazing-photos", label: "Grazing & Event Photography" },
   { id: "portion-math", label: "Portion Architect Math" },
   { id: "frozen-dozens", label: "Frozen Dozen Selection" },
@@ -228,8 +229,7 @@ function injectReviewStyles() {
 }
 
 export function initClientReviewMode({ kitchenData } = {}) {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("review") !== "1") return;
+  if (new URLSearchParams(window.location.search).get("review") !== "1") return;
 
   if (document.getElementById("rk-review-drawer")) return;
   injectReviewStyles();

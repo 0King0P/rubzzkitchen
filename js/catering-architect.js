@@ -12,6 +12,52 @@ const PROTEINS = [
   { id: "veg-forward", label: "Vegetarian-Forward" },
 ];
 
+const GUEST_PRESETS = [
+  { guests: 20, label: "20 Family" },
+  { guests: 40, label: "40 Dawat" },
+  { guests: 100, label: "100 Banquet" },
+  { guests: 150, label: "150 Gala" },
+];
+
+function rangePercent(val) {
+  const clamped = Math.min(250, Math.max(15, Number(val) || 40));
+  return ((clamped - 15) / (250 - 15)) * 100;
+}
+
+const SAFE_GRAZING_PHOTOS = {
+  "pipette-chaat": "./assets/originals/pipette-chaat-tiers.jpg",
+  "croissant-sliders": "./assets/originals/hero-grazing-sliders.jpg",
+  "samosa-flight": "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+  "samosa-spring-flight": "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+  "halal-charcuterie": "./assets/originals/charcuterie-orchard-table.jpg",
+  "kheer-parfait": "./assets/originals/parfait-mimosa-grazing.jpg",
+  "kheer-parfait-cups": "./assets/originals/parfait-mimosa-grazing.jpg",
+  "weekly-tiffin-addon": "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+  "floral-styling": "./assets/originals/hero-grazing-sliders.jpg",
+};
+
+const TIER_PREVIEW_PHOTOS = {
+  "petite-table": {
+    src: "./assets/originals/parfait-mimosa-grazing.jpg",
+    alt: "RubzzKitchen petite grazing installation with dessert parfaits and mocktail flutes",
+  },
+  "signature-grazing": {
+    src: "./assets/originals/hero-grazing-sliders.jpg",
+    alt: "RubzzKitchen signature grazing installation with brioche sliders and croissants",
+  },
+  "grand-gala-installation": {
+    src: "./assets/originals/charcuterie-orchard-table.jpg",
+    alt: "RubzzKitchen grand gala halal charcuterie and orchard grazing spread",
+  },
+};
+
+function resolveSafeGrazingSrc(rawSrc, idHint) {
+  if (typeof rawSrc === "string" && rawSrc.includes("./assets/originals/")) {
+    return rawSrc;
+  }
+  return SAFE_GRAZING_PHOTOS[idHint] || "./assets/originals/hero-grazing-sliders.jpg";
+}
+
 function resolveEl(target) {
   if (!target) return null;
   if (typeof target === "string") return document.querySelector(target);
@@ -113,10 +159,100 @@ function injectArchitectStyles() {
       font-variant-numeric: tabular-nums lining-nums;
     }
     .rk-range {
+      -webkit-appearance: none;
+      appearance: none;
       width: 100%;
-      accent-color: var(--accent-brass, #d4a86a);
       height: 6px;
+      margin: 8px 0 0;
+      border-radius: 0px;
+      border: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
+      background: linear-gradient(
+        to right,
+        var(--accent-brass, #d4a86a) 0%,
+        var(--accent-brass, #d4a86a) var(--range-pct, 10.64%),
+        var(--plane-3-elevated, #25201c) var(--range-pct, 10.64%),
+        var(--plane-3-elevated, #25201c) 100%
+      );
+      accent-color: var(--accent-brass, #d4a86a);
       cursor: pointer;
+    }
+    .rk-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--accent-brass, #d4a86a);
+      border: 2px solid var(--plane-0-void, #0a0807);
+      border-radius: 0px;
+      cursor: pointer;
+      transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .rk-range::-webkit-slider-thumb:hover {
+      background: var(--accent-brass-hover, #e2b87d);
+      transform: scale(1.08);
+    }
+    .rk-range::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: var(--accent-brass, #d4a86a);
+      border: 2px solid var(--plane-0-void, #0a0807);
+      border-radius: 0px;
+      cursor: pointer;
+    }
+    .rk-range-ticks {
+      position: relative;
+      height: 20px;
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: var(--ink-muted, #9a9086);
+      font-variant-numeric: tabular-nums lining-nums;
+    }
+    .rk-range-ticks span {
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .rk-range-ticks span:first-child {
+      left: 0%;
+      transform: none;
+    }
+    .rk-range-ticks span:last-child {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+    .rk-preset-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .rk-preset-btn {
+      min-height: 40px;
+      padding: 8px 6px;
+      text-align: center;
+      background: var(--plane-2-card, #1d1916);
+      color: var(--ink-secondary, #c6bcb0);
+      border: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
+      border-radius: var(--radius-sm, 0px);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums lining-nums;
+      cursor: pointer;
+      transition: border-color 150ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms cubic-bezier(0.23, 1, 0.32, 1), color 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .rk-preset-btn:hover {
+      border-color: var(--accent-brass, #d4a86a);
+      color: var(--ink-primary, #f5efe6);
+    }
+    .rk-preset-btn:active { transform: scale(0.97); }
+    .rk-preset-btn[aria-pressed="true"] {
+      border-color: var(--accent-brass, #d4a86a);
+      background: var(--surface-tint, rgba(212, 168, 106, 0.08));
+      color: var(--accent-brass, #d4a86a);
+      font-weight: 600;
     }
     .rk-control-label {
       display: block;
@@ -213,32 +349,78 @@ function injectArchitectStyles() {
     /* Grazing Scenography Studio */
     .rk-grz-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-items: stretch;
+    }
+    .rk-grz-col-left {
+      grid-column: span 6;
+      padding: 26px 28px;
+      border-right: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .rk-grz-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .rk-grz-station-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .rk-grz-station-btn {
+      padding: 10px 12px;
+      min-height: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+    .rk-grz-tier-note {
+      border: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
+      background: var(--plane-2-card, #1d1916);
+      padding: 14px 16px;
     }
     .rk-grz-preview {
+      grid-column: span 6;
       padding: 26px 28px;
       background: var(--plane-2-card, #1d1916);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       gap: 16px;
+    }
+    .rk-grz-preview-top {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .rk-grz-preview-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
     .rk-grz-frame {
       position: relative;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 11;
       overflow: hidden;
       border: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
-      background: var(--plane-0-void, #0a0807);
+      background: var(--plane-2-card, #1d1916);
     }
     .rk-grz-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
     }
     .rk-grz-specs {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
+      gap: 12px;
       border-top: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
       border-bottom: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
       padding: 12px 0;
@@ -253,8 +435,28 @@ function injectArchitectStyles() {
     }
     .rk-grz-spec-val {
       font-family: var(--font-display, Georgia, serif);
-      font-size: 1rem;
+      font-size: 0.96rem;
       color: var(--ink-primary, #f5efe6);
+    }
+    .rk-grz-selected-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .rk-grz-selected-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .rk-grz-chip {
+      font-size: 0.76rem;
+      padding: 4px 9px;
+      border: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
+      background: var(--plane-1-surface, #161310);
+      color: var(--ink-secondary, #c6bcb0);
+    }
+    .rk-grz-cta {
+      width: 100%;
     }
 
     /* Frozen Dozen Stash Box */
@@ -299,16 +501,18 @@ function injectArchitectStyles() {
       gap: 14px;
     }
 
-    @media (max-width: 940px) {
+    @media (max-width: 959px) {
       .rk-arch-col-left,
-      .rk-arch-col-right {
+      .rk-arch-col-right,
+      .rk-grz-col-left,
+      .rk-grz-preview {
         grid-column: span 12;
         border-right: none;
       }
-      .rk-arch-col-left {
+      .rk-arch-col-left,
+      .rk-grz-col-left {
         border-bottom: 1px solid var(--border-hairline, rgba(212, 168, 106, 0.22));
       }
-      .rk-grz-grid,
       .rk-frz-grid {
         grid-template-columns: 1fr;
       }
@@ -320,14 +524,20 @@ function injectArchitectStyles() {
       .rk-arch-head,
       .rk-arch-col-left,
       .rk-arch-col-right,
+      .rk-grz-col-left,
       .rk-grz-preview,
       .rk-frz-foot {
         padding: 18px 16px;
       }
       .rk-opt-grid,
       .rk-arbitrage-toggle,
+      .rk-grz-tier-grid,
+      .rk-grz-station-grid,
       .rk-grz-specs {
         grid-template-columns: 1fr;
+      }
+      .rk-preset-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .rk-frz-row {
         padding: 14px 16px;
@@ -433,12 +643,12 @@ export function initCateringArchitect({
   const grazingStations = (kitchenData && Array.isArray(kitchenData.GRAZING_STATIONS) && kitchenData.GRAZING_STATIONS.length)
     ? kitchenData.GRAZING_STATIONS
     : [
-        { id: "pipette-chaat", name: "Pipette Chana Chaat Shooters", detail: "Individual glass cups with tamarind pipettes", imageSrc: "./assets/portfolio/pipette-chaat-shooters.jpg" },
-        { id: "croissant-sliders", name: "Flaky Croissant & Brioche Sliders", detail: "Tiered savory cafe sliders & tea sandwiches", imageSrc: "./assets/portfolio/croissant-brioche-table.jpg" },
-        { id: "samosa-flight", name: "Hand-Folded Samosa & Spring Roll Flight", detail: "Crisp zabiha halal pastries & mint chutney", imageSrc: "./assets/generated/grazing-architectural-spread.jpg" },
-        { id: "halal-charcuterie", name: "Halal Charcuterie & Orchard Fruit", detail: "Artisan cheeses, figs, grapes & nuts", imageSrc: "./assets/portfolio/charcuterie-grazing-spread.jpg" },
-        { id: "kheer-parfait", name: "Individual Kheer & Parfait Cups", detail: "Cardamom rice pudding with pistachio & rose", imageSrc: "./assets/portfolio/autumn-grazing-cups.jpg" },
-        { id: "floral-brass", name: "Floral & Brass Riser Styling", detail: "Candlelit multi-plane architectural styling", imageSrc: "./assets/portfolio/grazing-magic-table.jpg" },
+        { id: "pipette-chaat", name: "Pipette Chana Chaat Shooters", detail: "Individual glass cups with tamarind pipettes", previewImage: "./assets/originals/pipette-chaat-tiers.jpg" },
+        { id: "croissant-sliders", name: "Flaky Croissant & Brioche Sliders", detail: "Tiered savory cafe sliders & tea sandwiches", previewImage: "./assets/originals/hero-grazing-sliders.jpg" },
+        { id: "samosa-flight", name: "Hand-Folded Samosa & Spring Roll Flight", detail: "Crisp zabiha halal pastries & mint chutney", previewImage: "./assets/originals/dawat-samosa-kebab-buffet.jpg" },
+        { id: "halal-charcuterie", name: "Halal Charcuterie & Orchard Fruit", detail: "Artisan cheeses, figs, grapes & nuts", previewImage: "./assets/originals/charcuterie-orchard-table.jpg" },
+        { id: "kheer-parfait", name: "Individual Kheer & Parfait Cups", detail: "Cardamom rice pudding with pistachio & rose", previewImage: "./assets/originals/parfait-mimosa-grazing.jpg" },
+        { id: "floral-styling", name: "Floral, Acrylic Riser & Platter Styling", detail: "Multi-plane white plinth & fresh floral styling", previewImage: "./assets/originals/hero-grazing-sliders.jpg" },
       ];
 
   const frozenItems = menuItems.filter((item) => item.categoryId === "frozen-dozens");
@@ -518,12 +728,7 @@ export function initCateringArchitect({
     };
   }
 
-  function renderPortionArchitect() {
-    if (!archEl) return;
-    const bp = computeBlueprint();
-    const activeOccasion = OCCASIONS.find((o) => o.id === archState.occasionId) || OCCASIONS[0];
-    const activeProtein = PROTEINS.find((p) => p.id === archState.proteinId) || PROTEINS[0];
-
+  function buildBlueprintBodyHtml(bp) {
     let arbitrageHtml = "";
     if (bp.matchedPackage) {
       const pkg = bp.matchedPackage;
@@ -572,6 +777,38 @@ export function initCateringArchitect({
           )
           .join("");
 
+    return `${arbitrageHtml}<ul class="rk-bp-list">${linesHtml}</ul>`;
+  }
+
+  function updateArchitectOutputs() {
+    if (!archEl) return;
+    const bp = computeBlueprint();
+    const pct = rangePercent(archState.guestCount).toFixed(2) + "%";
+    const slider = archEl.querySelector("#rkGuestSlider");
+    if (slider) {
+      slider.value = String(archState.guestCount);
+      slider.style.setProperty("--range-pct", pct);
+    }
+    const readout = archEl.querySelector("#rkArchGuestReadout");
+    if (readout) readout.textContent = String(archState.guestCount);
+    const totalEl = archEl.querySelector("#rkArchTotalDisplay");
+    if (totalEl) totalEl.textContent = formatMoney(bp.activeTotal);
+    const presetBtns = archEl.querySelectorAll("[data-arch-preset]");
+    for (const btn of presetBtns) {
+      const target = Number(btn.getAttribute("data-arch-preset"));
+      btn.setAttribute("aria-pressed", target === archState.guestCount ? "true" : "false");
+    }
+    const bodyEl = archEl.querySelector("[data-arch-blueprint-body]");
+    if (bodyEl) bodyEl.innerHTML = buildBlueprintBodyHtml(bp);
+  }
+
+  function renderPortionArchitect() {
+    if (!archEl) return;
+    const bp = computeBlueprint();
+    const activeOccasion = OCCASIONS.find((o) => o.id === archState.occasionId) || OCCASIONS[0];
+    const activeProtein = PROTEINS.find((p) => p.id === archState.proteinId) || PROTEINS[0];
+    const pct = rangePercent(archState.guestCount).toFixed(2) + "%";
+
     archEl.innerHTML = `
       <div class="rk-arch-panel">
         <div class="rk-arch-head">
@@ -594,12 +831,20 @@ export function initCateringArchitect({
                   </div>
                 </div>
               </div>
-              <input id="rkGuestSlider" class="rk-range" type="range" min="15" max="250" step="5" value="${archState.guestCount}" aria-label="Guest Count Slider">
-              <div style="display:flex; justify-content:space-between; font-size:0.74rem; color:var(--ink-muted); margin-top:6px;">
-                <span>15 Guests</span>
-                <span>40 Dawat</span>
-                <span>100 Banquet</span>
-                <span>250 Gala</span>
+              <input id="rkGuestSlider" class="rk-range" type="range" min="15" max="250" step="5" value="${archState.guestCount}" style="--range-pct:${pct};" aria-label="Guest Count Slider">
+              <div class="rk-range-ticks" aria-hidden="true">
+                <span>15</span>
+                <span style="left:25.53%;">75</span>
+                <span style="left:51.06%;">135</span>
+                <span style="left:76.60%;">195</span>
+                <span>250 Guests</span>
+              </div>
+              <div class="rk-preset-row" role="group" aria-label="Quick-Scale Guest Presets">
+                ${GUEST_PRESETS.map(
+                  (preset) => `
+                    <button type="button" class="rk-preset-btn" data-arch-preset="${preset.guests}" aria-pressed="${archState.guestCount === preset.guests ? "true" : "false"}">${escapeHtml(preset.label)}</button>
+                  `
+                ).join("")}
               </div>
             </div>
 
@@ -635,9 +880,9 @@ export function initCateringArchitect({
               <span class="rk-guest-readout" id="rkArchTotalDisplay">${escapeHtml(formatMoney(bp.activeTotal))}</span>
             </div>
 
-            ${arbitrageHtml}
-
-            <ul class="rk-bp-list">${linesHtml}</ul>
+            <div data-arch-blueprint-body style="display:flex; flex-direction:column; gap:16px;">
+              ${buildBlueprintBodyHtml(bp)}
+            </div>
 
             <div class="rk-bp-total-bar">
               <span style="font-size:0.8rem; color:var(--ink-secondary);">Ready to reserve or customize in the desk below.</span>
@@ -654,20 +899,29 @@ export function initCateringArchitect({
 
     archEl.addEventListener("input", (ev) => {
       if (ev.target && ev.target.id === "rkGuestSlider") {
-        archState.guestCount = Number(ev.target.value) || 40;
-        renderPortionArchitect();
+        archState.guestCount = Math.min(250, Math.max(15, Number(ev.target.value) || 40));
+        updateArchitectOutputs();
       }
     });
 
     archEl.addEventListener("click", (ev) => {
       if (ev.target.closest("[data-arch-guest-dec]")) {
         archState.guestCount = Math.max(15, archState.guestCount - 5);
-        renderPortionArchitect();
+        updateArchitectOutputs();
         return;
       }
       if (ev.target.closest("[data-arch-guest-inc]")) {
         archState.guestCount = Math.min(250, archState.guestCount + 5);
-        renderPortionArchitect();
+        updateArchitectOutputs();
+        return;
+      }
+      const presetBtn = ev.target.closest("[data-arch-preset]");
+      if (presetBtn) {
+        const nextGuests = Number(presetBtn.getAttribute("data-arch-preset"));
+        if (Number.isFinite(nextGuests)) {
+          archState.guestCount = Math.min(250, Math.max(15, nextGuests));
+          updateArchitectOutputs();
+        }
         return;
       }
       const occBtn = ev.target.closest("[data-arch-occasion]");
@@ -685,7 +939,7 @@ export function initCateringArchitect({
       const modeBtn = ev.target.closest("[data-bp-mode]");
       if (modeBtn) {
         archState.preferPackage = modeBtn.getAttribute("data-bp-mode") === "package";
-        renderPortionArchitect();
+        updateArchitectOutputs();
         return;
       }
       if (ev.target.closest("[data-arch-load]")) {
@@ -708,23 +962,42 @@ export function initCateringArchitect({
     tierId: grazingTiers[1] ? grazingTiers[1].id : grazingTiers[0].id,
     selectedStations: grazingStations.slice(0, 3).map((s) => s.id),
     minNoticeMsg: "",
+    previewPhoto: null,
   };
 
   function getGrazingPreviewImage() {
     if (grazingState.selectedStations.includes("pipette-chaat") || grazingState.selectedStations.some((id) => id.includes("pipette") || id.includes("chaat"))) {
       return {
-        src: "./assets/portfolio/pipette-chaat-shooters.jpg",
+        src: "./assets/originals/pipette-chaat-tiers.jpg",
         alt: "RubzzKitchen pipette chana chaat shooters and tea sandwiches",
       };
     }
     if (grazingState.selectedStations.some((id) => id.includes("croissant") || id.includes("slider"))) {
       return {
-        src: "./assets/portfolio/croissant-brioche-table.jpg",
+        src: "./assets/originals/hero-grazing-sliders.jpg",
         alt: "RubzzKitchen tiered croissant sandwiches and brioche sliders",
       };
     }
-    return {
-      src: "./assets/generated/grazing-architectural-spread.jpg",
+    if (grazingState.selectedStations.some((id) => id.includes("samosa") || id.includes("kebab"))) {
+      return {
+        src: "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+        alt: "RubzzKitchen dawat samosa, patty, and kebab buffet",
+      };
+    }
+    if (grazingState.selectedStations.some((id) => id.includes("charcuterie") || id.includes("orchard"))) {
+      return {
+        src: "./assets/originals/charcuterie-orchard-table.jpg",
+        alt: "RubzzKitchen halal charcuterie and orchard fruit grazing table",
+      };
+    }
+    if (grazingState.selectedStations.some((id) => id.includes("parfait") || id.includes("kheer"))) {
+      return {
+        src: "./assets/originals/parfait-mimosa-grazing.jpg",
+        alt: "RubzzKitchen layered parfait cups and mocktail grazing display",
+      };
+    }
+    return TIER_PREVIEW_PHOTOS[grazingState.tierId] || {
+      src: "./assets/originals/hero-grazing-sliders.jpg",
       alt: "RubzzKitchen architectural halal grazing installation",
     };
   }
@@ -732,14 +1005,21 @@ export function initCateringArchitect({
   function renderGrazingStudio() {
     if (!grazingEl) return;
     const activeTier = grazingTiers.find((t) => t.id === grazingState.tierId) || grazingTiers[0];
+    const selectedStationObjs = grazingStations.filter((s) => grazingState.selectedStations.includes(s.id));
     const lastSelectedId = grazingState.selectedStations[grazingState.selectedStations.length - 1];
     const lastStation = grazingStations.find((s) => s.id === lastSelectedId);
     const fallbackPreview = getGrazingPreviewImage();
-    const previewSrc = (lastStation && lastStation.imageSrc) || fallbackPreview.src;
-    const previewAlt = (lastStation && lastStation.name) || fallbackPreview.alt;
+    const previewSrc = (grazingState.previewPhoto && grazingState.previewPhoto.src)
+      || (lastStation && resolveSafeGrazingSrc(lastStation.previewImage || lastStation.imageSrc, lastStation.id))
+      || fallbackPreview.src;
+    const previewAlt = (grazingState.previewPhoto && grazingState.previewPhoto.alt)
+      || (lastStation && lastStation.name)
+      || fallbackPreview.alt;
 
     const footprint = activeTier.footprint || (activeTier.id.includes("petite") ? "6 ft" : activeTier.id.includes("grand") ? "12-16 ft" : "8-10 ft");
     const setupWin = activeTier.setupWindow || (activeTier.id.includes("petite") ? "75 min" : activeTier.id.includes("grand") ? "3 hrs" : "2 hrs");
+    const tierDesc = (activeTier.description || "Styled on site with white acrylic plinths, checkered porcelain and silver platters, and fresh seasonal florals.")
+      .replace(/brass and stone risers/gi, "white acrylic plinths and porcelain platters");
 
     grazingEl.innerHTML = `
       <div class="rk-arch-panel">
@@ -751,10 +1031,10 @@ export function initCateringArchitect({
           <p class="rk-arch-sub">Compose an on-site grazing installation modeled on RubzzKitchen's Moka &amp; Co. Cafe launch, CILRU Gala, and bridal shower spreads.</p>
         </div>
         <div class="rk-grz-grid">
-          <div class="rk-arch-col-left" style="border-right:1px solid var(--border-hairline);">
+          <div class="rk-grz-col-left">
             <div>
               <span class="rk-control-label">01 · Table Scale &amp; Guest Footprint</span>
-              <div class="rk-opt-grid" role="group" aria-label="Grazing Table Scale" style="grid-template-columns:repeat(3, minmax(0, 1fr));">
+              <div class="rk-grz-tier-grid" role="group" aria-label="Grazing Table Scale">
                 ${grazingTiers
                   .map(
                     (t) => `
@@ -770,14 +1050,15 @@ export function initCateringArchitect({
 
             <div>
               <span class="rk-control-label">02 · Grazing Stations (Select Minimum 2)</span>
-              <div class="rk-opt-grid" role="group" aria-label="Grazing Stations">
+              <div class="rk-grz-station-grid" role="group" aria-label="Grazing Stations">
                 ${grazingStations
                   .map((st) => {
                     const active = grazingState.selectedStations.includes(st.id);
+                    const stationDesc = st.detail || st.subtitle || "";
                     return `
-                      <button type="button" class="rk-opt-btn" data-grz-station="${escapeHtml(st.id)}" aria-pressed="${active ? "true" : "false"}">
-                        ${escapeHtml(st.name)}
-                        <span class="rk-bp-detail">${escapeHtml(st.detail || "")}</span>
+                      <button type="button" class="rk-opt-btn rk-grz-station-btn" data-grz-station="${escapeHtml(st.id)}" aria-pressed="${active ? "true" : "false"}">
+                        <span>${escapeHtml(st.name)}</span>
+                        <span class="rk-bp-detail">${escapeHtml(stationDesc)}</span>
                       </button>
                     `;
                   })
@@ -789,30 +1070,47 @@ export function initCateringArchitect({
                   : ""
               }
             </div>
+
+            <div class="rk-grz-tier-note">
+              <span class="rk-grz-spec-label" style="margin-bottom:4px;">Installation Scope &amp; Prop Architecture</span>
+              <p style="margin:0; font-size:0.84rem; color:var(--ink-secondary); line-height:1.5;">${escapeHtml(tierDesc)}</p>
+            </div>
           </div>
 
           <div class="rk-grz-preview">
-            <div class="rk-grz-frame">
-              <img src="${escapeHtml(previewSrc)}" alt="${escapeHtml(previewAlt)}" loading="lazy">
+            <div class="rk-grz-preview-top">
+              <div class="rk-grz-frame">
+                <img src="${escapeHtml(previewSrc)}" alt="${escapeHtml(previewAlt)}" loading="lazy">
+              </div>
+              <div class="rk-grz-specs">
+                <div>
+                  <span class="rk-grz-spec-label">Table Footprint</span>
+                  <span class="rk-grz-spec-val">${escapeHtml(footprint)}</span>
+                </div>
+                <div>
+                  <span class="rk-grz-spec-label">On-Site Setup Window</span>
+                  <span class="rk-grz-spec-val">${escapeHtml(setupWin)}</span>
+                </div>
+                <div>
+                  <span class="rk-grz-spec-label">Culinary Standard</span>
+                  <span class="rk-grz-spec-val">100% Zabiha Halal Scratch Prep</span>
+                </div>
+              </div>
+              <div class="rk-grz-selected-wrap">
+                <span class="rk-grz-spec-label" style="margin-bottom:0;">Selected Stations List (${selectedStationObjs.length})</span>
+                <div class="rk-grz-selected-chips">
+                  ${selectedStationObjs
+                    .map((st) => `<span class="rk-grz-chip">${escapeHtml(st.name)}</span>`)
+                    .join("")}
+                </div>
+              </div>
             </div>
-            <div class="rk-grz-specs">
-              <div>
-                <span class="rk-grz-spec-label">Table Footprint</span>
-                <span class="rk-grz-spec-val">${escapeHtml(footprint)}</span>
-              </div>
-              <div>
-                <span class="rk-grz-spec-label">On-Site Setup</span>
-                <span class="rk-grz-spec-val">${escapeHtml(setupWin)}</span>
-              </div>
-              <div>
-                <span class="rk-grz-spec-label">Stations</span>
-                <span class="rk-grz-spec-val">${grazingState.selectedStations.length} Curated</span>
-              </div>
+            <div class="rk-grz-preview-foot">
+              <p style="margin:0; font-size:0.86rem; color:var(--ink-secondary); line-height:1.45;">
+                Active tier: <strong>${escapeHtml(activeTier.name)}</strong> (${escapeHtml(activeTier.guestRange || "")}) · ${escapeHtml(activeTier.priceLabel || "Custom Venue Quote")}.
+              </p>
+              <button type="button" class="rk-btn-primary rk-grz-cta" data-grz-add>Add Grazing Commission to Inquiry</button>
             </div>
-            <p style="margin:0; font-size:0.86rem; color:var(--ink-secondary); line-height:1.5;">
-              Active tier: <strong>${escapeHtml(activeTier.name)}</strong> (${escapeHtml(activeTier.guestRange || "")}) · ${escapeHtml(activeTier.priceLabel || "Custom Venue Quote")}.
-            </p>
-            <button type="button" class="rk-btn-primary" data-grz-add>Add Grazing Commission to Inquiry</button>
           </div>
         </div>
       </div>
@@ -825,8 +1123,10 @@ export function initCateringArchitect({
     grazingEl.addEventListener("click", (ev) => {
       const tierBtn = ev.target.closest("[data-grz-tier]");
       if (tierBtn) {
-        grazingState.tierId = tierBtn.getAttribute("data-grz-tier");
+        const nextTierId = tierBtn.getAttribute("data-grz-tier");
+        grazingState.tierId = nextTierId;
         grazingState.minNoticeMsg = "";
+        grazingState.previewPhoto = TIER_PREVIEW_PHOTOS[nextTierId] || getGrazingPreviewImage();
         renderGrazingStudio();
         return;
       }
@@ -841,8 +1141,17 @@ export function initCateringArchitect({
             return;
           }
           grazingState.selectedStations = grazingState.selectedStations.filter((s) => s !== id);
+          const fallbackId = grazingState.selectedStations[grazingState.selectedStations.length - 1];
+          const fallbackSt = grazingStations.find((s) => s.id === fallbackId);
+          grazingState.previewPhoto = fallbackSt
+            ? { src: resolveSafeGrazingSrc(fallbackSt.previewImage || fallbackSt.imageSrc, fallbackSt.id), alt: fallbackSt.name }
+            : getGrazingPreviewImage();
         } else {
           grazingState.selectedStations = [...grazingState.selectedStations, id];
+          const stObj = grazingStations.find((s) => s.id === id);
+          grazingState.previewPhoto = stObj
+            ? { src: resolveSafeGrazingSrc(stObj.previewImage || stObj.imageSrc, stObj.id), alt: stObj.name }
+            : getGrazingPreviewImage();
         }
         grazingState.minNoticeMsg = "";
         renderGrazingStudio();

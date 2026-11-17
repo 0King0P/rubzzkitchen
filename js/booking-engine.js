@@ -15,7 +15,7 @@ const SERVICE_FORMATS = [
   {
     id: "grazing",
     label: "Bespoke Grazing Installation",
-    leadText: "7 days notice recommended for custom floral & brass styling",
+    leadText: "7 days notice recommended for custom floral, acrylic riser & platter styling",
   },
   {
     id: "frozen",

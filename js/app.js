@@ -9,10 +9,10 @@ import {
   PORTFOLIO_EVENTS,
   GENERATED_PLATES,
   FAQ_ITEMS,
-} from '../data/kitchen-data.js?v=2';
-import { initBookingEngine } from './booking-engine.js?v=2';
-import { initCateringArchitect } from './catering-architect.js?v=2';
-import { initClientReviewMode } from './client-review-mode.js?v=2';
+} from '../data/kitchen-data.js?v=3';
+import { initBookingEngine } from './booking-engine.js?v=3';
+import { initCateringArchitect } from './catering-architect.js?v=3';
+import { initClientReviewMode } from './client-review-mode.js?v=3';
 
 const THEME_STORAGE_KEY = 'rubzzkitchen_theme_v1';
 
@@ -283,6 +283,7 @@ function initMenuLedger(bookingController) {
     });
 
     if (filtered.length === 0) {
+      gridEl.classList.remove('rk-menu-ledger--compact-two-col');
       gridEl.innerHTML = `
         <div class="rk-empty-state">
           <p style="margin: 0 0 0.75rem;">No dishes match "${escapeHtml(searchQuery || activeDietary)}".</p>
@@ -306,9 +307,16 @@ function initMenuLedger(bookingController) {
       return;
     }
 
+    const isCompactTwoCol =
+      activeCategory === 'frozen-dozens' ||
+      activeDietary === 'Ready-to-Cook Frozen' ||
+      (filtered.length >= 4 && filtered.every((entry) => !(typeof entry.imageSrc === 'string' && entry.imageSrc.trim())));
+    gridEl.classList.toggle('rk-menu-ledger--compact-two-col', isCompactTwoCol);
+
     gridEl.innerHTML = filtered
       .map((entry) => {
-        const hasThumb = Boolean(entry.imageSrc);
+        const thumbSrc = typeof entry.imageSrc === 'string' ? entry.imageSrc.trim() : '';
+        const hasThumb = Boolean(thumbSrc);
         const tagText = entry.badge || (Array.isArray(entry.dietary) && entry.dietary[0]) || entry.subtitle || '';
         const includesHtml = Array.isArray(entry.includes) && entry.includes.length
           ? `<ul class="rk-ledger-includes">${entry.includes.map((inc) => `<li>${escapeHtml(inc)}</li>`).join('')}</ul>`
@@ -338,7 +346,7 @@ function initMenuLedger(bookingController) {
 
         return `
           <article class="rk-ledger-row ${hasThumb ? '' : 'rk-ledger-row--no-thumb'}">
-            ${hasThumb ? `<img class="rk-ledger-thumb" src="${escapeHtml(entry.imageSrc)}" alt="${escapeHtml(entry.name)}" width="76" height="92" loading="lazy" />` : ''}
+            ${hasThumb ? `<img class="rk-ledger-thumb" src="${escapeHtml(thumbSrc)}" alt="${escapeHtml(entry.name)}" width="76" height="92" loading="lazy" />` : ''}
             <div class="rk-ledger-main">
               <div class="rk-ledger-title-line">
                 <h3 class="rk-ledger-title">${escapeHtml(entry.name)}</h3>
@@ -462,9 +470,8 @@ function initPortfolioAndLightbox() {
     visibleList = events.filter((item) => matchesCategory(item, activeFilter));
     gridEl.innerHTML = visibleList
       .map((item, idx) => {
-        const wideClass = item.aspect === 'landscape' || idx === 0 ? 'rk-portfolio-card--wide' : '';
         return `
-          <article class="rk-portfolio-card ${wideClass}">
+          <article class="rk-portfolio-card">
             <button class="rk-portfolio-trigger" type="button" data-portfolio-index="${idx}" aria-label="View ${escapeHtml(item.title)} full size">
               <div class="rk-portfolio-media">
                 <img src="${escapeHtml(item.imageSrc)}" alt="${escapeHtml(item.title)}" loading="lazy" />

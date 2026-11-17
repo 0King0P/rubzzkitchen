@@ -40,12 +40,12 @@ export const BRAND_PROFILE = {
     {
       id: "zabiha-scratch",
       title: "100% Zabiha Halal Scratch Kitchen",
-      detail: "Every stock, kebab mince, biryani deg, and grazing charcuterie board is prepared from certified Zabiha Halal cuts with zero shortcuts."
+      detail: "Every stock, kebab mince, biryani pot, and grazing charcuterie board is prepared from certified Zabiha Halal cuts with zero shortcuts."
     },
     {
       id: "mosque-galas",
       title: "Mosque, Nikah & 150+ Gala Scaling",
-      detail: "Dedicated multi-deg pricing and coordinated delivery windows are available for community iftars, nikahs, and fundraisers above 150 guests."
+      detail: "Dedicated large-batch pricing and coordinated delivery windows are available for community iftars, nikahs, and fundraisers above 150 guests."
     }
   ]
 };
@@ -56,42 +56,42 @@ export const MENU_CATEGORIES = [
     label: "Appetizers & Desserts",
     subtitle: "Crisp chaats, golden fritters, and slow-reduced sweets",
     editorialNote: "Built for cocktail hours, dawat starters, and finishing tables.",
-    heroImage: "./assets/generated/dessert-kheer-matanjan.jpg"
+    heroImage: "./assets/originals/parfait-mimosa-grazing.jpg"
   },
   {
     id: "entrees",
     label: "Signature Entrees",
     subtitle: "Saffron biryanis, bone-in karahi, nihari, and haleem",
     editorialNote: "Small trays serve 12 to 15 guests; large full trays serve 25 to 30 guests.",
-    heroImage: "./assets/generated/entree-karahi-nihari.jpg"
+    heroImage: "./assets/originals/nihari-karahi-bowls.jpg"
   },
   {
     id: "oven-baked-bbq",
     label: "Oven-Baked BBQ",
     subtitle: "Char-kissed boneless tikka, malai boti, bihari, and kebabs",
     editorialNote: "Marinated overnight in hung yogurt, toasted spices, and raw papaya.",
-    heroImage: "./assets/generated/bbq-oven-platter.jpg"
+    heroImage: "./assets/originals/oven-baked-chicken-platter.jpg"
   },
   {
     id: "frozen-dozens",
     label: "Frozen Dozens",
     subtitle: "Hand-pleated samosas, puff patties, and seared kebabs",
     editorialNote: "Packed by the dozen for effortless hosting, Ramadan prep, and family freezers.",
-    heroImage: "./assets/generated/frozen-artisan-board.jpg"
+    heroImage: "./assets/originals/dawat-samosa-kebab-buffet.jpg"
   },
   {
     id: "banquet-packages",
     label: "Banquet Packages",
     subtitle: "Curated 40-guest and 100-guest dawat bundles with naan",
     editorialNote: "Complete multi-course spreads with fresh naan, salad, and green chutney included.",
-    heroImage: "./assets/generated/hero-royal-dastarkhwan.jpg"
+    heroImage: "./assets/originals/seekh-kebab-biryani-board.jpg"
   },
   {
     id: "holiday-packages",
     label: "Holiday Packages",
     subtitle: "Seasonal family roast feasts for ~20 guests",
     editorialNote: "Halal holiday centerpieces crafted for Thanksgiving and winter gatherings.",
-    heroImage: "./assets/portfolio/autumn-grazing-cups.jpg"
+    heroImage: "./assets/originals/holiday-roasted-turkey.jpg"
   }
 ];
 
@@ -106,7 +106,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian"],
     spiceLevel: "Medium",
     badge: "Dawat Starter",
-    imageSrc: "./assets/generated/grazing-architectural-spread.jpg",
+    imageSrc: "./assets/originals/parfait-mimosa-grazing.jpg",
     options: [
       { optionId: "pakora-sm", label: "Small Tray", price: 65, servesText: "Serves 12-15" },
       { optionId: "pakora-lg", label: "Large Tray", price: 110, servesText: "Serves 25-30" }
@@ -121,7 +121,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian", "Signature"],
     spiceLevel: "Signature",
     badge: "House Favorite",
-    imageSrc: "./assets/portfolio/pipette-chaat-shooters.jpg",
+    imageSrc: "./assets/originals/pipette-chaat-tiers.jpg",
     options: [
       { optionId: "chana-chaat-sm", label: "Small Tray", price: 55, servesText: "Serves 12-15" },
       { optionId: "chana-chaat-lg", label: "Large Tray", price: 100, servesText: "Serves 25-30" }
@@ -132,11 +132,11 @@ export const MENU_ITEMS = [
     categoryId: "appetizers-desserts",
     name: "Dahi Bhalla",
     subtitle: "Whipped yogurt lentil dumplings",
-    description: "Featherlight urad-dal dumplings steeped in chilled sweet-tangy yogurt, finished with date-tamarind drizzle and toasted cumin.",
+    description: "Featherlight urad-dal dumplings steeped in chilled sweet-tangy yogurt, finished with date-tamarind drizzle, pomegranate, and toasted cumin.",
     dietary: ["Vegetarian"],
     spiceLevel: "Mild",
     badge: "Chilled Classic",
-    imageSrc: "./assets/portfolio/pipette-chaat-shooters.jpg",
+    imageSrc: "./assets/originals/festive-chaat-biryani-dawat.jpg",
     options: [
       { optionId: "dahi-bhalla-sm", label: "Small Tray", price: 65, servesText: "Serves 12-15" },
       { optionId: "dahi-bhalla-lg", label: "Large Tray", price: 110, servesText: "Serves 25-30" }
@@ -147,11 +147,11 @@ export const MENU_ITEMS = [
     categoryId: "appetizers-desserts",
     name: "Orchard Fruit Chaat",
     subtitle: "Spiced seasonal fruit & citrus toss",
-    description: "Hand-cut apples, grapes, berries, citrus, and stone fruit folded in house chaat masala, black salt, and fresh lemon.",
+    description: "Hand-cut apples, grapes, berries, citrus, and kiwi folded in house chaat masala, black salt, and fresh lemon.",
     dietary: ["Vegetarian"],
     spiceLevel: "Mild",
     badge: "Iftar Staple",
-    imageSrc: "./assets/portfolio/charcuterie-grazing-spread.jpg",
+    imageSrc: "./assets/originals/festive-chaat-biryani-dawat.jpg",
     options: [
       { optionId: "fruit-chaat-sm", label: "Small Tray", price: 75, servesText: "Serves 12-15" },
       { optionId: "fruit-chaat-lg", label: "Large Tray", price: 125, servesText: "Serves 25-30" }
@@ -166,7 +166,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Signature",
     badge: "Crowd Assortment",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: "./assets/originals/dawat-samosa-kebab-buffet.jpg",
     options: [
       { optionId: "mixed-fried-sm", label: "Small Tray", price: 85, servesText: "Serves 12-15" },
       { optionId: "mixed-fried-lg", label: "Large Tray", price: 135, servesText: "Serves 25-30" }
@@ -181,7 +181,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian", "Signature"],
     spiceLevel: "Mild",
     badge: "Heritage Sweet",
-    imageSrc: "./assets/generated/dessert-kheer-matanjan.jpg",
+    imageSrc: null,
     options: [
       { optionId: "kheer-sm", label: "Small Tray", price: 65, servesText: "Serves 12-15" },
       { optionId: "kheer-lg", label: "Large Tray", price: 120, servesText: "Serves 25-30" }
@@ -196,7 +196,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian"],
     spiceLevel: "Mild",
     badge: "Celebration Dessert",
-    imageSrc: "./assets/generated/dessert-kheer-matanjan.jpg",
+    imageSrc: null,
     options: [
       { optionId: "matanjan-sm", label: "Small Tray", price: 80, servesText: "Serves 12-15" },
       { optionId: "matanjan-lg", label: "Large Tray", price: 120, servesText: "Serves 25-30" }
@@ -213,7 +213,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian"],
     spiceLevel: "Medium",
     badge: "Vegetarian Classic",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: null,
     options: [
       { optionId: "lahori-cholay-sm", label: "Small Tray", price: 75, servesText: "Serves 12-15" },
       { optionId: "lahori-cholay-lg", label: "Large Tray", price: 115, servesText: "Serves 25-30" }
@@ -228,7 +228,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Signature",
     badge: "Dawat Essential",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
+    imageSrc: "./assets/originals/seekh-kebab-biryani-board.jpg",
     options: [
       { optionId: "chk-biryani-sm", label: "Small Tray", price: 80, servesText: "Serves 12-15" },
       { optionId: "chk-biryani-lg", label: "Large Tray", price: 140, servesText: "Serves 25-30" }
@@ -239,11 +239,11 @@ export const MENU_ITEMS = [
     categoryId: "entrees",
     name: "Chicken Korma / Karahi",
     subtitle: "Velvet Shahi korma or wok-seared ginger karahi",
-    description: "Prepare as slow-braised celebratory korma with toasted almond and kewra, or vibrant tomato, black pepper, and fresh ginger karahi.",
+    description: "Prepared as slow-braised celebratory korma with toasted almond and kewra, or vibrant tomato, black pepper, and fresh ginger karahi.",
     dietary: ["Zabiha Halal"],
     spiceLevel: "Medium",
     badge: "Banquet Anchor",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg",
     options: [
       { optionId: "chk-karahi-sm", label: "Small Tray", price: 80, servesText: "Serves 12-15" },
       { optionId: "chk-karahi-lg", label: "Large Tray", price: 140, servesText: "Serves 25-30" }
@@ -258,7 +258,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal"],
     spiceLevel: "Medium",
     badge: "Home Heritage",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: null,
     options: [
       { optionId: "palak-chk-sm", label: "Small Tray", price: 85, servesText: "Serves 12-15" },
       { optionId: "palak-chk-lg", label: "Large Tray", price: 145, servesText: "Serves 25-30" }
@@ -273,7 +273,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian"],
     spiceLevel: "Mild",
     badge: "Vegetarian Favorite",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: null,
     options: [
       { optionId: "palak-paneer-sm", label: "Small Tray", price: 85, servesText: "Serves 12-15" },
       { optionId: "palak-paneer-lg", label: "Large Tray", price: 140, servesText: "Serves 25-30" }
@@ -288,7 +288,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal"],
     spiceLevel: "Medium",
     badge: "Heirloom Dish",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg",
     options: [
       { optionId: "aloo-ghosht-sm", label: "Small Tray", price: 140, servesText: "Serves 12-15" },
       { optionId: "aloo-ghosht-lg", label: "Large Tray", price: 230, servesText: "Serves 25-30" }
@@ -303,7 +303,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Signature",
     badge: "Royal Centerpiece",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
+    imageSrc: "./assets/originals/seekh-kebab-biryani-board.jpg",
     options: [
       { optionId: "goat-biryani-sm", label: "Small Tray", price: 110, servesText: "Serves 12-15" },
       { optionId: "goat-biryani-lg", label: "Large Tray", price: 200, servesText: "Serves 25-30" }
@@ -318,7 +318,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Signature",
     badge: "Chef Flagship",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg",
     options: [
       { optionId: "goat-karahi-sm", label: "Small Tray", price: 145, servesText: "Serves 12-15" },
       { optionId: "goat-karahi-lg", label: "Large Tray", price: 240, servesText: "Serves 25-30" }
@@ -333,7 +333,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Signature",
     badge: "Slow Braise",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg",
     options: [
       { optionId: "beef-nihari-sm", label: "Small Tray", price: 100, servesText: "Serves 12-15" },
       { optionId: "beef-nihari-lg", label: "Large Tray", price: 180, servesText: "Serves 25-30" }
@@ -348,7 +348,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Signature"],
     spiceLevel: "Medium",
     badge: "Ceremonial Stew",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
+    imageSrc: null,
     options: [
       { optionId: "beef-haleem-sm", label: "Small Tray", price: 100, servesText: "Serves 12-15" },
       { optionId: "beef-haleem-lg", label: "Large Tray", price: 180, servesText: "Serves 25-30" }
@@ -365,7 +365,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "BBQ & Grill", "Signature"],
     spiceLevel: "Signature",
     badge: "BBQ Trio",
-    imageSrc: "./assets/generated/bbq-oven-platter.jpg",
+    imageSrc: "./assets/originals/oven-baked-chicken-platter.jpg",
     options: [
       { optionId: "mix-bbq-sm", label: "Small Tray", price: 100, servesText: "Serves 12-15" },
       { optionId: "mix-bbq-lg", label: "Large Tray", price: 200, servesText: "Serves 25-30" }
@@ -380,7 +380,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "BBQ & Grill"],
     spiceLevel: "Medium",
     badge: "Charred Roast",
-    imageSrc: "./assets/generated/bbq-oven-platter.jpg",
+    imageSrc: "./assets/originals/oven-baked-chicken-platter.jpg",
     options: [
       { optionId: "baked-bone-sm", label: "Small Tray", price: 85, servesText: "Serves 12-15" },
       { optionId: "baked-bone-lg", label: "Large Tray", price: 150, servesText: "Serves 25-30" }
@@ -395,7 +395,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "BBQ & Grill", "Signature"],
     spiceLevel: "Signature",
     badge: "Event Specialty",
-    imageSrc: "./assets/generated/bbq-oven-platter.jpg",
+    imageSrc: "./assets/originals/chapli-seekh-platter.jpg",
     options: [
       { optionId: "seekh-custom", label: "Custom Event Tray", price: null, servesText: "Custom Event Tray" }
     ]
@@ -411,7 +411,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian", "Ready-to-Cook Frozen"],
     spiceLevel: "Mild",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "veg-spring-1dz", label: "1 Dozen", price: 16, servesText: "12 Pieces" }
     ]
@@ -425,7 +425,7 @@ export const MENU_ITEMS = [
     dietary: ["Vegetarian", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "mini-aloo-1dz", label: "1 Dozen", price: 16, servesText: "12 Pieces" }
     ]
@@ -439,7 +439,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "mini-chk-samosa-1dz", label: "1 Dozen", price: 18, servesText: "12 Pieces" }
     ]
@@ -453,7 +453,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Mild",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-spring-1dz", label: "1 Dozen", price: 20, servesText: "12 Pieces" }
     ]
@@ -467,7 +467,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "mini-beef-samosa-1dz", label: "1 Dozen", price: 20, servesText: "12 Pieces" }
     ]
@@ -481,7 +481,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Mild",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-puff-1dz", label: "1 Dozen", price: 20, servesText: "12 Pieces" }
     ]
@@ -495,7 +495,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "beef-puff-1dz", label: "1 Dozen", price: 24, servesText: "12 Pieces" }
     ]
@@ -509,7 +509,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-kofta-1dz", label: "1 Dozen", price: 24, servesText: "12 Pieces" }
     ]
@@ -523,7 +523,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-muthi-1dz", label: "1 Dozen", price: 24, servesText: "12 Pieces" }
     ]
@@ -537,7 +537,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Mild",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-shami-1dz", label: "1 Dozen", price: 24, servesText: "12 Pieces" }
     ]
@@ -551,7 +551,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Signature",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "chk-chapli-1dz", label: "1 Dozen", price: 26, servesText: "12 Pieces" }
     ]
@@ -565,7 +565,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen"],
     spiceLevel: "Medium",
     badge: "1 Dozen",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "beef-shami-1dz", label: "1 Dozen", price: 28, servesText: "12 Pieces" }
     ]
@@ -579,7 +579,7 @@ export const MENU_ITEMS = [
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen", "Signature"],
     spiceLevel: "Signature",
     badge: "Best Seller",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: null,
     options: [
       { optionId: "beef-chapli-1dz", label: "1 Dozen", price: 32, servesText: "12 Pieces" }
     ]
@@ -588,12 +588,12 @@ export const MENU_ITEMS = [
     id: "braided-chicken-bread",
     categoryId: "frozen-dozens",
     name: "Braided Chicken Bread",
-    subtitle: "Bakery-style stuffed sesame brioche loaf",
-    description: "Hand-braided soft dough filled with creamy black-pepper chicken, bell peppers, and sesame-kalonji seed crust.",
+    subtitle: "Bakery-style stuffed sesame pastry braid",
+    description: "Hand-braided golden dough filled with creamy black-pepper chicken, bell peppers, and sesame-herb crust.",
     dietary: ["Zabiha Halal", "Ready-to-Cook Frozen", "Signature"],
     spiceLevel: "Mild",
     badge: "Signature Loaf",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
+    imageSrc: "./assets/originals/braided-chicken-bread.jpg",
     options: [
       { optionId: "chk-bread-1pc", label: "1 Large Piece", price: 45, servesText: "1 Large Loaf" }
     ]
@@ -622,7 +622,7 @@ export const BANQUET_PACKAGES = [
       "20 Fresh Naan, Garden Salad & Green Chutney"
     ],
     naanIncluded: "20 Fresh Naan + Salad & Green Chutney",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg"
+    imageSrc: "./assets/originals/festive-chaat-biryani-dawat.jpg"
   },
   {
     id: "dawat-40-royal",
@@ -646,7 +646,7 @@ export const BANQUET_PACKAGES = [
       "20 Fresh Naan, Garden Salad & Green Chutney"
     ],
     naanIncluded: "20 Fresh Naan + Salad & Green Chutney",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg"
+    imageSrc: "./assets/originals/seekh-kebab-biryani-board.jpg"
   },
   {
     id: "banquet-100-classic",
@@ -668,7 +668,7 @@ export const BANQUET_PACKAGES = [
       "75 Fresh Naan, Garden Salad & Green Chutney"
     ],
     naanIncluded: "75 Fresh Naan + Salad & Green Chutney",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg"
+    imageSrc: "./assets/originals/dawat-samosa-kebab-buffet.jpg"
   },
   {
     id: "banquet-100-imperial",
@@ -691,7 +691,7 @@ export const BANQUET_PACKAGES = [
       "75 Fresh Naan, Garden Salad & Green Chutney"
     ],
     naanIncluded: "75 Fresh Naan + Salad & Green Chutney",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg"
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg"
   },
   {
     id: "holiday-20-pkg1",
@@ -706,12 +706,12 @@ export const BANQUET_PACKAGES = [
     includes: [
       "Whole Herb-Roasted Zabiha Halal Turkey",
       "Slow-Simmered Spiced Beef Stew",
-      "Savory Herb Rice & Mashed Potatoes with Pan Gravy",
-      "Roasted Autumn Vegetables & Dinner Rolls",
-      "Cranberry Relish & Seasonal Dessert Cups"
+      "Herb Butter Rice & Mashed Potatoes",
+      "Garlic Green Beans & Chicken Spinach Pie (2)",
+      "Cranberry Sauce & Pecan Pie or Tres Leches Cake"
     ],
-    naanIncluded: "Dinner Rolls & Pan Gravy Included",
-    imageSrc: "./assets/portfolio/autumn-grazing-cups.jpg"
+    naanIncluded: "Cranberry Sauce & Herb Sides Included",
+    imageSrc: "./assets/originals/holiday-roasted-turkey.jpg"
   },
   {
     id: "holiday-20-pkg2",
@@ -725,13 +725,13 @@ export const BANQUET_PACKAGES = [
     badge: "Holiday Collection",
     includes: [
       "Whole Herb-Roasted Zabiha Halal Chicken",
-      "Glazed Honey-Cranberry Roasted Chicken",
-      "Savory Rice & Roasted Garlic Potatoes",
-      "Seasonal Vegetables & Freshly Baked Rolls",
-      "Spiced Fruit & Dessert Parfait Cups"
+      "Honey-Cranberry Baked Chicken with Ricotta Cheese",
+      "Beef Chili, Mac & Cheese & Herb Butter Rice",
+      "Garlic Green Beans & Mashed or Baked Potatoes",
+      "Gajar Halwa or Cardamom Kheer"
     ],
-    naanIncluded: "Fresh Dinner Rolls Included",
-    imageSrc: "./assets/portfolio/autumn-grazing-cups.jpg"
+    naanIncluded: "Full Holiday Sides & Dessert Included",
+    imageSrc: "./assets/originals/oven-baked-chicken-platter.jpg"
   }
 ];
 
@@ -744,6 +744,7 @@ export const GRAZING_TIERS = [
     setupWindow: "60-minute on-site styling",
     startingPrice: null,
     priceLabel: "Custom Venue Quote",
+    imageSrc: "./assets/originals/floral-croissant-bar.jpg",
     description: "Intimate tiered appetizer and fruit display tailored for bridal mornings, tea gatherings, and home receptions."
   },
   {
@@ -754,7 +755,8 @@ export const GRAZING_TIERS = [
     setupWindow: "90-minute on-site styling",
     startingPrice: null,
     priceLabel: "Custom Venue Quote",
-    description: "Multi-level brass and stone risers pairing pipette chaat shooters, croissant sliders, artisan samosas, and halal charcuterie."
+    imageSrc: "./assets/originals/hero-grazing-sliders.jpg",
+    description: "Multi-level acrylic and porcelain risers pairing pipette chaat shooters, croissant sliders, artisan samosas, and halal charcuterie."
   },
   {
     id: "grand-gala-installation",
@@ -764,6 +766,7 @@ export const GRAZING_TIERS = [
     setupWindow: "120-minute venue styling",
     startingPrice: null,
     priceLabel: "Custom Venue Quote",
+    imageSrc: "./assets/originals/cilru-gala-ballroom.jpg",
     description: "Full architectural centerpiece built for grand openings, university galas, corporate lounges, and large nikah receptions."
   }
 ];
@@ -773,37 +776,43 @@ export const GRAZING_STATIONS = [
     id: "pipette-chaat",
     name: "Pipette Chana Chaat Shooters",
     subtitle: "Individual cocktail glasses with tamarind pipettes & edible florals",
-    previewImage: "./assets/portfolio/pipette-chaat-shooters.jpg"
+    imageSrc: "./assets/originals/pipette-chaat-tiers.jpg",
+    previewImage: "./assets/originals/pipette-chaat-tiers.jpg"
   },
   {
     id: "croissant-sliders",
     name: "Flaky Croissant & Brioche Sliders",
     subtitle: "Tiered chicken salad croissants and spiced brioche party sliders",
-    previewImage: "./assets/portfolio/croissant-brioche-table.jpg"
+    imageSrc: "./assets/originals/hero-grazing-sliders.jpg",
+    previewImage: "./assets/originals/hero-grazing-sliders.jpg"
   },
   {
     id: "samosa-spring-flight",
     name: "Hand-Folded Samosa & Spring Roll Flight",
-    subtitle: "Crisp keema samosas and spring rolls presented on architectural risers",
-    previewImage: "./assets/generated/grazing-architectural-spread.jpg"
+    subtitle: "Crisp keema samosas and spring rolls presented on tiered risers",
+    imageSrc: "./assets/originals/cilru-gala-ballroom.jpg",
+    previewImage: "./assets/originals/cilru-gala-ballroom.jpg"
   },
   {
     id: "halal-charcuterie",
     name: "Halal Charcuterie & Orchard Fruit",
-    subtitle: "Black mission figs, honeycomb, olives, pita triangles, nuts & chutneys",
-    previewImage: "./assets/portfolio/charcuterie-grazing-spread.jpg"
+    subtitle: "Grapes, toasted almonds, pita triangles, mango, kiwi & spiced chutney",
+    imageSrc: "./assets/originals/charcuterie-orchard-table.jpg",
+    previewImage: "./assets/originals/charcuterie-orchard-table.jpg"
   },
   {
     id: "kheer-parfait-cups",
-    name: "Individual Kheer & Parfait Cups",
-    subtitle: "Portioned cardamom kheer and layered seasonal dessert shooters",
-    previewImage: "./assets/generated/dessert-kheer-matanjan.jpg"
+    name: "Dessert Parfait & Mango Flute Bar",
+    subtitle: "Portioned berry parfaits, mango mocktail flutes, and pakora pyramids",
+    imageSrc: "./assets/originals/parfait-mimosa-grazing.jpg",
+    previewImage: "./assets/originals/parfait-mimosa-grazing.jpg"
   },
   {
     id: "weekly-tiffin-addon",
-    name: "Weekly Home Meal Tiffin Add-On",
-    subtitle: "Custom family-style home-cooked weekly meal prep containers",
-    previewImage: "./assets/portfolio/grazing-magic-table.jpg"
+    name: "Floral Riser & Macaron Console",
+    subtitle: "White garden roses, framed menu styling, macaron tower & croissant trays",
+    imageSrc: "./assets/originals/floral-croissant-bar.jpg",
+    previewImage: "./assets/originals/floral-croissant-bar.jpg"
   }
 ];
 
@@ -840,83 +849,83 @@ export const DELIVERY_ZONES = [
 
 export const GENERATED_PLATES = [
   {
-    id: "hero-royal-dastarkhwan",
-    title: "Royal Dastarkhwan",
-    caption: "Copper-deg saffron Goat Biryani, slow-braised Beef Nihari, blistered sesame naan, and mint raita.",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
+    id: "hero-grazing-sliders",
+    title: "Brioche Sliders & Croissant Grazing Spread",
+    caption: "Rose-skewered brioche sliders, flaky croissants on checkered trays, kebabs, and white florals.",
+    imageSrc: "./assets/originals/hero-grazing-sliders.jpg",
     aspect: "portrait"
   },
   {
-    id: "grazing-architectural-spread",
-    title: "Architectural Grazing Installation",
-    caption: "Pipette chana chaat shooters, flaky samosas, brioche sliders, orchard fruit, and white garden florals.",
-    imageSrc: "./assets/generated/grazing-architectural-spread.jpg",
+    id: "charcuterie-orchard-table",
+    title: "Overhead Halal Grazing & Chutney Spread",
+    caption: "Hammered mini karahi chutney bowl, toasted pita triangles, almonds, grapes, mango, and kiwi.",
+    imageSrc: "./assets/originals/charcuterie-orchard-table.jpg",
+    aspect: "portrait"
+  },
+  {
+    id: "nihari-karahi-bowls",
+    title: "Candlelit Beef Nihari & Karahi",
+    caption: "Slow-braised beef nihari and spiced karahi finished with fresh coriander.",
+    imageSrc: "./assets/originals/nihari-karahi-bowls.jpg",
+    aspect: "portrait"
+  },
+  {
+    id: "seekh-kebab-biryani-board",
+    title: "Char-Grilled Seekh Kebabs & Saffron Pulao",
+    caption: "Hand-skewered seekh kebabs with blistered green chili, saffron rice, naan, and chutneys.",
+    imageSrc: "./assets/originals/seekh-kebab-biryani-board.jpg",
+    aspect: "portrait"
+  },
+  {
+    id: "dawat-samosa-kebab-buffet",
+    title: "Home Dawat Samosa & Kebab Buffet",
+    caption: "Tiered samosas and flaky puff patties alongside lemon-garnished kebabs and sliders.",
+    imageSrc: "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+    aspect: "portrait"
+  },
+  {
+    id: "parfait-mimosa-grazing",
+    title: "Dessert Parfaits & Mango Flute Table",
+    caption: "Layered berry parfaits, mango flutes, blush roses, and golden pakora platter.",
+    imageSrc: "./assets/originals/parfait-mimosa-grazing.jpg",
+    aspect: "portrait"
+  },
+  {
+    id: "inline-seekh-platter",
+    title: "Seekh Kebab & Saffron Rice Detail",
+    caption: "Inline editorial vignette of char-grilled seekh kebabs and saffron rice.",
+    imageSrc: "./assets/originals/inline-seekh-platter.jpg",
     aspect: "landscape"
   },
   {
-    id: "entree-karahi-nihari",
-    title: "Brass Vessel Karahi & Palak Paneer",
-    caption: "Tomato-ginger Goat Karahi and slow-simmered Palak Paneer served in hand-hammered brass.",
-    imageSrc: "./assets/generated/entree-karahi-nihari.jpg",
-    aspect: "portrait"
-  },
-  {
-    id: "bbq-oven-platter",
-    title: "Oven-Baked Halal BBQ Platter",
-    caption: "Malai Boti, crimson Chicken Tikka, smoky Chicken Bihari, and Seekh Kebabs with pickled red onion.",
-    imageSrc: "./assets/generated/bbq-oven-platter.jpg",
-    aspect: "portrait"
-  },
-  {
-    id: "frozen-artisan-board",
-    title: "Artisan Freezer Stash Board",
-    caption: "Hand-pleated keema samosas, Peshawari chapli kebabs, shami medallions, and braided chicken bread.",
-    imageSrc: "./assets/generated/frozen-artisan-board.jpg",
-    aspect: "portrait"
-  },
-  {
-    id: "dessert-kheer-matanjan",
-    title: "Cardamom Kheer & Saffron Matanjan",
-    caption: "Terracotta-chilled kheer dusted with crushed pistachio and damask rose petals alongside saffron matanjan.",
-    imageSrc: "./assets/generated/dessert-kheer-matanjan.jpg",
-    aspect: "portrait"
-  },
-  {
-    id: "inline-saffron-deg",
-    title: "Saffron Copper Deg Vignette",
-    caption: "Inline editorial vignette of saffron biryani.",
-    imageSrc: "./assets/generated/inline-saffron-deg.jpg",
-    aspect: "landscape"
-  },
-  {
-    id: "inline-grazing-fig",
-    title: "Grazing Fig & Brass Vignette",
-    caption: "Inline editorial vignette of fig and brass grazing.",
-    imageSrc: "./assets/generated/inline-grazing-fig.jpg",
+    id: "inline-chutney-spread",
+    title: "Spiced Chutney & Pita Grazing Detail",
+    caption: "Inline editorial vignette of glossy tomato-chili chutney, pita triangles, and grapes.",
+    imageSrc: "./assets/originals/inline-chutney-spread.jpg",
     aspect: "landscape"
   }
 ];
 
 export const PORTFOLIO_EVENTS = [
   {
-    id: "moka-grand-opening",
-    title: "Moka & Co. Cafe Grand Opening",
-    category: "corporate",
+    id: "signature-grazing-sliders",
+    title: "Brioche Sliders & Checkered Croissant Spread",
+    category: "grazing",
     location: "New Jersey",
-    eventType: "Cafe Grand Opening Grazing Table",
-    caption: "Cornucopia orchard fruit installation, hand-carved citrus, berries, and signature dipping bowls for Moka & Co.",
-    imageSrc: "./assets/portfolio/moka-cafe-opening.jpg",
-    aspect: "portrait"
+    eventType: "Signature Grazing Installation",
+    caption: "Rose-skewered brioche sliders on silver platters, flaky filled croissants on checkered porcelain trays, kebabs, and fresh white florals.",
+    imageSrc: "./assets/originals/hero-grazing-sliders.jpg",
+    aspect: "wide"
   },
   {
-    id: "charcuterie-brass-table",
-    title: "Artisan Halal Grazing & Chutney Karahi",
+    id: "charcuterie-orchard-spread",
+    title: "Halal Grazing Table & Spiced Chutney Karahi",
     category: "grazing",
     location: "Carteret, NJ",
-    eventType: "Bespoke Grazing Spread",
-    caption: "Lush grapes, toasted almonds, warm pita triangles, orchard apples, and spiced house chutney in a hammered mini karahi.",
-    imageSrc: "./assets/portfolio/charcuterie-grazing-spread.jpg",
-    aspect: "portrait"
+    eventType: "Bespoke Grazing Commission",
+    caption: "Lush green and red grapes, toasted almonds, warm pita triangles, kiwi, mango, and glossy house chutney in a hammered mini karahi.",
+    imageSrc: "./assets/originals/charcuterie-orchard-table.jpg",
+    aspect: "tall"
   },
   {
     id: "pipette-chaat-reception",
@@ -924,79 +933,79 @@ export const PORTFOLIO_EVENTS = [
     category: "bridal",
     location: "Edison, NJ",
     eventType: "Engagement & Tea Reception",
-    caption: "Individual chana chaat shooter glasses topped with edible florals and tamarind pipettes beneath olive-garnished tea sandwiches.",
-    imageSrc: "./assets/portfolio/pipette-chaat-shooters.jpg",
-    aspect: "portrait"
-  },
-  {
-    id: "croissant-brioche-spread",
-    title: "Tiered Croissant & Brioche Slider Bar",
-    category: "grazing",
-    location: "Woodbridge, NJ",
-    eventType: "Private Reception Table",
-    caption: "Flaky filled croissants, rose-skewered brioche sliders, and layered canape risers styled on charcoal stone.",
-    imageSrc: "./assets/portfolio/croissant-brioche-table.jpg",
-    aspect: "portrait"
+    caption: "Individual chana chaat shooter glasses topped with icing florals and tamarind pipettes beneath olive-picked tea sandwiches and skewers.",
+    imageSrc: "./assets/originals/pipette-chaat-tiers.jpg",
+    aspect: "standard"
   },
   {
     id: "cilru-fundraising-gala",
-    title: "CILRU Fundraising Gala Banquet",
+    title: "CILRU Fundraising Gala Ballroom",
     category: "corporate",
     location: "Central NJ Ballroom",
     eventType: "150+ Guest Fundraising Gala",
-    caption: "Dual-table ballroom appetizer and spring roll architecture framed by white roses and portioned chaat cups.",
-    imageSrc: "./assets/portfolio/cilru-gala-setup.jpg",
-    aspect: "portrait"
+    caption: "Dual-table ballroom installation lined with white garden roses, crisp spring roll tiers, and portioned appetizer cups.",
+    imageSrc: "./assets/originals/cilru-gala-ballroom.jpg",
+    aspect: "wide"
   },
   {
-    id: "bridal-shower-table",
-    title: "Bridal Shower Grazing & Slider Console",
+    id: "chandelier-banquet-console",
+    title: "Chandelier Dining Room Catering Console",
     category: "bridal",
     location: "Middlesex County, NJ",
-    eventType: "Bridal Shower Installation",
-    caption: "White plinth risers, candlelit runners, flaky croissant sandwiches, brioche sliders, and grilled skewer platters.",
-    imageSrc: "./assets/portfolio/bridal-shower-spread.jpg",
-    aspect: "portrait"
+    eventType: "Private Reception Styling",
+    caption: "Crystal-chandelier dining setup pairing elevated brioche sliders, puff pastries, white roses, and framed RubzzKitchen table signage.",
+    imageSrc: "./assets/originals/chandelier-banquet-table.jpg",
+    aspect: "tall"
   },
   {
-    id: "engagement-food-setup",
-    title: "Engagement Canape & Skewer Spread",
+    id: "parfait-mimosa-bar",
+    title: "Berry Parfaits, Mango Flutes & Pakora Pyramid",
+    category: "grazing",
+    location: "Woodbridge, NJ",
+    eventType: "Bridal & Brunch Grazing Bar",
+    caption: "Multi-tier berry dessert parfaits, chilled mango mocktail flutes, blush roses, and golden crisp pakoras.",
+    imageSrc: "./assets/originals/parfait-mimosa-grazing.jpg",
+    aspect: "standard"
+  },
+  {
+    id: "floral-croissant-bar",
+    title: "White Garden Rose Croissant & Macaron Bar",
     category: "bridal",
     location: "Iselin, NJ",
-    eventType: "Engagement Celebration",
-    caption: "Multi-level cocktail setup combining tamarind pipette chaat shooters, savory tea bites, and roasted chicken skewers.",
-    imageSrc: "./assets/portfolio/engagement-catering.jpg",
-    aspect: "portrait"
+    eventType: "Shower & Tea Reception",
+    caption: "Fresh white garden roses flanking a pastel macaron tower, checkered croissant and brioche trays, and RubzzKitchen menu frame.",
+    imageSrc: "./assets/originals/floral-croissant-bar.jpg",
+    aspect: "standard"
   },
   {
-    id: "candlelit-grazing-magic",
-    title: "Candlelit White & Brass Grazing Table",
+    id: "acrylic-riser-spread",
+    title: "White Acrylic Riser & Hydrangea Spread",
     category: "grazing",
     location: "Princeton, NJ",
-    eventType: "Evening Grazing Commission",
-    caption: "Tall glass taper candles, grilled flatbread wedges, whipped dip with spiced relish, and cascading red grapes.",
-    imageSrc: "./assets/portfolio/grazing-magic-table.jpg",
-    aspect: "portrait"
+    eventType: "Boutique Cocktail Grazing",
+    caption: "Architectural white acrylic risers elevating spiced sliders and cocktail bites beside lush white hydrangeas.",
+    imageSrc: "./assets/originals/acrylic-riser-spread.jpg",
+    aspect: "tall"
   },
   {
-    id: "royal-dastarkhwan-archive",
-    title: "Copper-Deg Biryani & Nihari Dawat",
-    category: "banquets",
-    location: "Carteret Atelier",
-    eventType: "Signature Dawat Commission",
-    caption: "Full-service Zabiha Goat Biryani, overnight Beef Nihari, sesame naan, and mint raita for milestone family feasts.",
-    imageSrc: "./assets/generated/hero-royal-dastarkhwan.jpg",
-    aspect: "portrait"
+    id: "tiered-chaat-cups",
+    title: "Three-Tier Individual Savory Chaat Cups",
+    category: "corporate",
+    location: "Central NJ",
+    eventType: "Cocktail Hour Canapes",
+    caption: "Three-tier wood-and-iron stand showcasing grab-and-go savory chaat cups topped with crisp bites.",
+    imageSrc: "./assets/originals/tiered-chaat-cups.jpg",
+    aspect: "standard"
   },
   {
-    id: "autumn-holiday-collection",
-    title: "November Harvest & Holiday Roasts",
+    id: "dawat-samosa-kebab-buffet",
+    title: "Home Dawat Samosa, Pastry & Kebab Buffet",
     category: "banquets",
-    location: "Tri-State Delivery",
-    eventType: "Seasonal Family Feast",
-    caption: "Limited-run Thanksgiving and winter halal turkey, beef stew, and honey-cranberry chicken family packages.",
-    imageSrc: "./assets/portfolio/autumn-grazing-cups.jpg",
-    aspect: "portrait"
+    location: "Carteret, NJ",
+    eventType: "Family Dawat Commission",
+    caption: "Generous home buffet spread featuring tiered samosas and puff patties, lemon-garnished kebabs, biryani, and sliders.",
+    imageSrc: "./assets/originals/dawat-samosa-kebab-buffet.jpg",
+    aspect: "wide"
   }
 ];
 
@@ -1029,6 +1038,6 @@ export const FAQ_ITEMS = [
   {
     id: "custom-mosque-gala",
     question: "Do you customize menus for mosques, nikahs, or 150+ guest galas?",
-    answer: "Yes. Beyond our 40-guest ($649 / $849) and 100-guest ($1,449 / $1,999) packages, we build custom multi-deg menus, mosque iftars, and fundraising gala spreads. Call or WhatsApp (732) 486-5390 directly for large-venue coordination."
+    answer: "Yes. Beyond our 40-guest ($649 / $849) and 100-guest ($1,449 / $1,999) packages, we build custom large-batch menus, mosque iftars, and fundraising gala spreads. Call or WhatsApp (732) 486-5390 directly for large-venue coordination."
   }
 ];
