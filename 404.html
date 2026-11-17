@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | RubzzKitchen</title>
+  <link rel="icon" type="image/jpeg" href="./assets/portfolio/brand-crest.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --plane-0-void: oklch(0.115 0.010 45);
+      --plane-1-surface: oklch(0.150 0.012 45);
+      --plane-2-card: oklch(0.185 0.014 45);
+      --plane-3-elevated: oklch(0.225 0.016 45);
+      --plane-4-overlay: oklch(0.265 0.018 45);
+      --text-primary: oklch(0.95 0.015 80);
+      --specular-top: inset 0 1px 0 0 color-mix(in oklch, oklch(0.78 0.095 72) 20%, transparent);
+    }
+    .rk-404-wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1.25rem;
+    }
+    .rk-404-card {
+      width: min(560px, 100%);
+      padding: 2.5rem;
+      background-color: var(--plane-2-card);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      box-shadow: var(--specular-top);
+    }
+    .rk-404-num {
+      font-variant-numeric: tabular-nums lining-nums;
+    }
+    .rk-tactile:active {
+      transform: scale(0.97) translateY(1px);
+    }
+  </style>
+  <link rel="stylesheet" href="./styles/tokens.css?v=1" />
+  <link rel="stylesheet" href="./styles/atelier.css?v=1" />
+</head>
+<body>
+  <div class="rk-grain-overlay" aria-hidden="true"></div>
+  <main class="rk-404-wrap">
+    <section class="rk-404-card" aria-labelledby="rk404Heading">
+      <p class="rk-eyebrow rk-404-num">ERROR 404 &middot; CARTERET, NJ</p>
+      <h1 id="rk404Heading" class="rk-display-heading" style="font-size: clamp(2rem, 4vw, 2.85rem); margin-bottom: 1rem;">
+        That table isn't set here.
+      </h1>
+      <p class="rk-section-lead" style="margin-bottom: 1.75rem;">
+        The page you requested moved or does not exist. Return to the main RubzzKitchen menu ledger, portion architect, and reservation desk.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+        <a class="rk-btn rk-btn-primary rk-tactile" href="./">Return to RubzzKitchen</a>
+        <a class="rk-text-link rk-404-num" href="tel:+17324865390">Call (732) 486-5390</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

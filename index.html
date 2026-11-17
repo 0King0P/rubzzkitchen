@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RubzzKitchen | Zabiha Halal Pakistani &amp; Indian Catering in Carteret, NJ</title>
+  <meta name="description" content="RubzzKitchen (@rubzzkitchen) in Carteret, NJ: scratch Zabiha Halal Pakistani and Indian catering trays, 40- and 100-guest dawat banquets, bespoke grazing tables, and artisan frozen dozens." />
+  <meta name="theme-color" content="#0a0807" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/jpeg" href="./assets/portfolio/brand-crest.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --plane-0-void: oklch(0.115 0.010 45);
+      --plane-1-surface: oklch(0.150 0.012 45);
+      --plane-2-card: oklch(0.185 0.014 45);
+      --plane-3-elevated: oklch(0.225 0.016 45);
+      --plane-4-overlay: oklch(0.265 0.018 45);
+      --text-primary: oklch(0.95 0.015 80);
+      --color-surface: var(--plane-1-surface);
+      --specular-top: inset 0 1px 0 0 color-mix(in oklch, oklch(0.78 0.095 72) 20%, transparent);
+    }
+    .rk-critical-num { font-variant-numeric: tabular-nums lining-nums; }
+    .rk-critical-btn:active { transform: scale(0.97) translateY(1px); }
+  </style>
+  <link rel="stylesheet" href="./styles/tokens.css?v=1" />
+  <link rel="stylesheet" href="./styles/atelier.css?v=1" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["FoodEstablishment", "CateringService"],
+    "name": "RubzzKitchen",
+    "alternateName": "@rubzzkitchen",
+    "description": "100% Zabiha Halal Pakistani and Indian catering, banquet packages, bespoke grazing tables, and ready-to-cook frozen appetizers in Carteret, NJ.",
+    "servesCuisine": ["Pakistani", "Indian", "Halal"],
+    "telephone": "+1-732-486-5390",
+    "email": "rubzzkitchen@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/rubzzkitchen/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Carteret",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Carteret, NJ",
+      "Edison, NJ",
+      "Iselin, NJ",
+      "Woodbridge, NJ",
+      "Middlesex County, NJ",
+      "Central New Jersey",
+      "North Jersey",
+      "New York City"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="rk-grain-overlay" aria-hidden="true"></div>
+  <a class="rk-skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="rk-header">
+    <div class="rk-container rk-header-inner">
+      <a class="rk-brand" href="#hero">
+        <img class="rk-brand-crest" src="./assets/portfolio/brand-crest.jpg" alt="RubzzKitchen crest" width="38" height="38" />
+        <span class="rk-brand-meta">
+          <span class="rk-brand-name">RubzzKitchen</span>
+          <span class="rk-brand-sub">Carteret, NJ &middot; Zabiha Halal</span>
+        </span>
+      </a>
+
+      <nav class="rk-nav" aria-label="Primary navigation">
+        <a class="rk-nav-link" href="#menu">Tasting Menu</a>
+        <a class="rk-nav-link" href="#architect">Portion Architect</a>
+        <a class="rk-nav-link" href="#grazing">Grazing &amp; Freezer</a>
+        <a class="rk-nav-link" href="#portfolio">Event Archive</a>
+        <a class="rk-nav-link" href="#book">Reserve &amp; Order</a>
+      </nav>
+
+      <div class="rk-header-actions">
+        <button id="rkThemeToggle" class="rk-icon-btn rk-tactile rk-critical-btn" type="button" aria-pressed="false" aria-label="Switch lighting mode between Candlelit Dawat and Warm Parchment">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <span class="rk-theme-label" id="rkThemeLabel">Candlelit Dawat</span>
+        </button>
+
+        <button id="rkBagTrigger" class="rk-icon-btn rk-tactile rk-critical-btn" type="button" aria-haspopup="dialog" aria-label="Open Catering Order Ledger">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 7h12l-1 13H7L6 7z"></path>
+            <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
+          </svg>
+          <span>Order Ledger</span>
+          <span id="rkBagCount" class="rk-bag-count rk-tabular rk-critical-num">0</span>
+        </button>
+
+        <button id="rkMobileNavToggle" class="rk-icon-btn rk-mobile-toggle rk-tactile" type="button" aria-expanded="false" aria-controls="rkMobileNav" aria-label="Toggle navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="rkMobileNav" class="rk-mobile-drawer" hidden>
+      <nav class="rk-mobile-nav-list" aria-label="Mobile navigation">
+        <a class="rk-mobile-nav-link" href="#menu">Tasting Menu</a>
+        <a class="rk-mobile-nav-link" href="#architect">Portion Architect</a>
+        <a class="rk-mobile-nav-link" href="#grazing">Grazing &amp; Freezer</a>
+        <a class="rk-mobile-nav-link" href="#portfolio">Event Archive</a>
+        <a class="rk-mobile-nav-link" href="#faq">Standards &amp; FAQ</a>
+        <a class="rk-mobile-nav-link" href="#book">Reserve &amp; Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="rk-hero">
+      <div class="rk-container rk-hero-grid">
+        <div>
+          <p class="rk-eyebrow">CARTERET, NEW JERSEY &middot; 100% ZABIHA HALAL ATELIER</p>
+          <h1 class="rk-display-heading rk-hero-headline">
+            Copper-deg
+            <span class="rk-inline-vignette" aria-hidden="true">
+              <img src="./assets/generated/inline-saffron-deg.jpg" alt="" width="320" height="200" />
+            </span>
+            Pakistani dawats, <em>sculptural</em>
+            <span class="rk-inline-vignette" aria-hidden="true">
+              <img src="./assets/generated/inline-grazing-fig.jpg" alt="" width="320" height="200" />
+            </span>
+            grazing tables &amp; kitchen-made trays.
+          </h1>
+          <p class="rk-hero-copy">
+            We cook from scratch in small batches out of Carteret, NJ. Order full Pakistani and Indian catering trays, 40- or 100-guest banquet spreads, styled halal grazing tables, or hand-folded frozen dozens ready for your own oven.
+          </p>
+          <div class="rk-hero-actions">
+            <a class="rk-btn rk-btn-primary rk-tactile rk-critical-btn" href="#menu">Build Your Order</a>
+            <a class="rk-text-link" href="#architect">Plan Event Portions &rarr;</a>
+          </div>
+          <div class="rk-provenance-strip">
+            <div class="rk-provenance-item">
+              <strong>Fulfillment</strong>
+              Carteret Kitchen Pickup &amp; Tri-State Delivery
+            </div>
+            <div class="rk-provenance-item">
+              <strong>Event Scale</strong>
+              20 to 250+ Guest Dawats
+            </div>
+            <div class="rk-provenance-item">
+              <strong>Direct Concierge</strong>
+              <a href="tel:+17324865390">(732) 486-5390</a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="rk-hero-plate">
+          <div class="rk-plate-frame">
+            <img src="./assets/generated/hero-royal-dastarkhwan.jpg" alt="Copper deg saffron goat biryani, beef nihari karahi, sesame naan, and mint raita on dark walnut" width="960" height="1200" fetchpriority="high" />
+          </div>
+          <figcaption class="rk-plate-placard">
+            <strong>Royal Dastarkhwan</strong>
+            <span>Goat Biryani &middot; Slow-Braised Beef Nihari</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="atelier-craft" class="rk-section rk-section--surface" aria-labelledby="rkCraftHeading">
+      <div class="rk-container">
+        <div class="rk-section-head">
+          <div>
+            <h2 id="rkCraftHeading" class="rk-section-title">Three culinary disciplines under one halal kitchen.</h2>
+          </div>
+          <p class="rk-section-lead">
+            Every tray, canape shooter, and frozen samosa is built to order with Zabiha Halal meats, whole roasted spices, and zero industrial shortcuts.
+          </p>
+        </div>
+
+        <div class="rk-pillar-list">
+          <article class="rk-pillar-row">
+            <figure class="rk-pillar-media">
+              <div class="rk-pillar-media-frame">
+                <img src="./assets/generated/entree-karahi-nihari.jpg" alt="Hammered brass vessels of goat karahi and palak paneer garnished with fresh coriander" width="960" height="1200" loading="lazy" />
+              </div>
+              <figcaption class="rk-plate-placard">
+                <strong>Plate 01 &middot; Copper-Deg Classics</strong>
+                <span>Small &amp; Large Catering Trays</span>
+              </figcaption>
+            </figure>
+            <div class="rk-pillar-body">
+              <span class="rk-pillar-index">01 / Copper-Deg Pakistani &amp; Indian Classics</span>
+              <h3 class="rk-pillar-title">Long-simmered nihari, dum biryani &amp; wok-fired karahi.</h3>
+              <p class="rk-pillar-desc">
+                From bone-in goat biryani layered with saffron to velvet beef haleem and ginger-topped karahi, our entrees travel hot in half and full catering trays sized for 12 to 30 guests per pan.
+              </p>
+              <div class="rk-pillar-spec">
+                <span>Small Tray: 12-15 Guests</span>
+                <span>Large Tray: 25-30 Guests</span>
+                <span>100% Zabiha Halal</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rk-pillar-row rk-pillar-row--reverse">
+            <figure class="rk-pillar-media">
+              <div class="rk-pillar-media-frame rk-pillar-media-frame--wide">
+                <img src="./assets/generated/grazing-architectural-spread.jpg" alt="Architectural halal grazing table with pipette chana chaat shooters, flaky samosas, brioche sliders, and fruit" width="1280" height="800" loading="lazy" />
+              </div>
+              <figcaption class="rk-plate-placard">
+                <strong>Plate 02 &middot; Grazing Scenography</strong>
+                <span>Nikah, Bridal &amp; Gala Installations</span>
+              </figcaption>
+            </figure>
+            <div class="rk-pillar-body">
+              <span class="rk-pillar-index">02 / Architectural Grazing &amp; Canape Tables</span>
+              <h3 class="rk-pillar-title">Individual pipette chaat shooters, brioche sliders &amp; floral risers.</h3>
+              <p class="rk-pillar-desc">
+                Built on site across New Jersey and NYC for cafe openings, nikah receptions, and fundraisers. We style tiered brass levels with flaky croissants, savory pastries, orchard fruit, and halal charcuterie.
+              </p>
+              <div class="rk-pillar-spec">
+                <span>6 ft to 16 ft Tables</span>
+                <span>On-Site Styling</span>
+                <span>7-Day Advance Commission</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rk-pillar-row">
+            <figure class="rk-pillar-media">
+              <div class="rk-pillar-media-frame">
+                <img src="./assets/generated/bbq-oven-platter.jpg" alt="Oven-baked halal malai boti, chicken tikka, chicken bihari, and seekh kebabs on black stoneware" width="960" height="1200" loading="lazy" />
+              </div>
+              <figcaption class="rk-plate-placard">
+                <strong>Plate 03 &middot; Oven BBQ &amp; Freezer Stash</strong>
+                <span>Event Platters &amp; Dozen Boxes</span>
+              </figcaption>
+            </figure>
+            <div class="rk-pillar-body">
+              <span class="rk-pillar-index">03 / Oven-Baked BBQ &amp; Hand-Folded Freezer Stash</span>
+              <h3 class="rk-pillar-title">Char-kissed malai boti, bihari kabab &amp; 14 frozen appetizers.</h3>
+              <p class="rk-pillar-desc">
+                Order mixed boneless BBQ trays for effortless host service, or stock your freezer with dozen packs of hand-pleated keema samosas, puff patties, chapli kebabs, and braided sesame chicken bread.
+              </p>
+              <div class="rk-pillar-spec">
+                <span>Frozen Dozens from $16</span>
+                <span>Braided Bread $45</span>
+                <span>Carteret Local Pickup</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="rk-section" aria-labelledby="rkMenuHeading">
+      <div class="rk-container">
+        <div class="rk-section-head">
+          <div>
+            <p class="rk-eyebrow">COMPLETE TASTING &amp; TRAY LEDGER</p>
+            <h2 id="rkMenuHeading" class="rk-section-title">Menu &amp; Catering Pricing</h2>
+          </div>
+          <p class="rk-section-lead">
+            Select any tray size, banquet dawat, or frozen dozen to add it directly to your Order Ledger. Prices reflect current Carteret kitchen rates.
+          </p>
+        </div>
+
+        <div class="rk-menu-controls">
+          <div id="rkMenuTabs" class="rk-tablist" role="tablist" aria-label="Menu categories"></div>
+          <div class="rk-menu-toolbar">
+            <div class="rk-field-group">
+              <label class="rk-field-label" for="rkMenuSearch">Search Dishes or Ingredients</label>
+              <input id="rkMenuSearch" class="rk-input" type="search" placeholder="Search Nihari, Biryani, Samosa, 40-Guest..." autocomplete="off" />
+            </div>
+            <div class="rk-field-group">
+              <span class="rk-field-label">Dietary &amp; Format Filter</span>
+              <div id="rkDietaryFilters" class="rk-filter-row" role="group" aria-label="Dietary filters">
+                <button class="rk-filter-btn rk-tactile" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="rk-filter-btn rk-tactile" type="button" data-filter="Vegetarian" aria-pressed="false">Vegetarian</button>
+                <button class="rk-filter-btn rk-tactile" type="button" data-filter="Signature" aria-pressed="false">Signature</button>
+                <button class="rk-filter-btn rk-tactile" type="button" data-filter="BBQ &amp; Grill" aria-pressed="false">BBQ &amp; Grill</button>
+                <button class="rk-filter-btn rk-tactile" type="button" data-filter="Ready-to-Cook Frozen" aria-pressed="false">Ready-to-Cook Frozen</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rkMenuGrid" class="rk-menu-ledger" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="architect" class="rk-section rk-section--surface" aria-label="Portion Architect">
+      <div class="rk-container">
+        <div id="rkPortionArchitectMount"></div>
+      </div>
+    </section>
+
+    <section id="grazing" class="rk-section" aria-label="Grazing Studio and Freezer Stash Builder">
+      <div class="rk-container">
+        <div id="rkGrazingStudioMount"></div>
+        <div id="rkFrozenBuilderMount"></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="rk-section rk-section--surface" aria-labelledby="rkPortfolioHeading">
+      <div class="rk-container">
+        <div class="rk-section-head">
+          <div>
+            <p class="rk-eyebrow">EVENT ARCHIVE &middot; NJ &amp; TRI-STATE</p>
+            <h2 id="rkPortfolioHeading" class="rk-section-title">Styled Tables &amp; Real Client Setups</h2>
+          </div>
+          <p class="rk-section-lead">
+            Documented commissions across Carteret, Edison, Jersey City, and NYC: cafe grand openings, fundraising galas, nikah spreads, and candlelit bridal showers.
+          </p>
+        </div>
+
+        <div id="rkPortfolioFilters" class="rk-filter-row" role="group" aria-label="Filter event archive">
+          <button class="rk-filter-btn rk-tactile" type="button" data-portfolio-filter="all" aria-pressed="true">All Events</button>
+          <button class="rk-filter-btn rk-tactile" type="button" data-portfolio-filter="grazing" aria-pressed="false">Grazing Tables</button>
+          <button class="rk-filter-btn rk-tactile" type="button" data-portfolio-filter="bridal" aria-pressed="false">Nikah &amp; Bridal</button>
+          <button class="rk-filter-btn rk-tactile" type="button" data-portfolio-filter="corporate" aria-pressed="false">Galas &amp; Grand Openings</button>
+        </div>
+
+        <div id="rkPortfolioGrid" class="rk-portfolio-grid"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="rk-section" aria-labelledby="rkFaqHeading">
+      <div class="rk-container rk-faq-split">
+        <div>
+          <p class="rk-eyebrow">KITCHEN STANDARDS &amp; POLICIES</p>
+          <h2 id="rkFaqHeading" class="rk-section-title">Ordering &amp; Halal Craft</h2>
+          <p class="rk-section-lead" style="margin-top: 0.85rem;">
+            Clear timelines keep every tray fresh from the Carteret kitchen to your venue table.
+          </p>
+          <ul id="rkBookingPolicies" class="rk-policy-list"></ul>
+        </div>
+
+        <div>
+          <div id="rkFaqList" class="rk-faq-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="rk-section rk-section--surface" aria-label="Reservation and Order Desk">
+      <div class="rk-container">
+        <div id="rkBookingMount"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rk-footer">
+    <div class="rk-container">
+      <div class="rk-footer-grid">
+        <div>
+          <p class="rk-footer-title">RubzzKitchen Atelier</p>
+          <p style="margin: 0 0 1rem; font-family: var(--font-display); font-size: 1.55rem; color: var(--ink-primary);">
+            Zabiha Halal Pakistani &amp; Indian Catering
+          </p>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--ink-secondary); max-width: 44ch;">
+            Prepared from scratch in Carteret, NJ with 100% Zabiha Halal meats. Full event trays, styled grazing installations, and frozen appetizers for home and hosting.
+          </p>
+        </div>
+
+        <div>
+          <p class="rk-footer-title">Direct Concierge</p>
+          <ul class="rk-footer-links">
+            <li><a href="tel:+17324865390" class="rk-tabular">(732) 486-5390 (Primary / WhatsApp)</a></li>
+            <li><a href="tel:+17324259212" class="rk-tabular">(732) 425-9212 (Kitchen Line)</a></li>
+            <li><a href="mailto:rubzzkitchen@gmail.com">rubzzkitchen@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/rubzzkitchen/" target="_blank" rel="noopener noreferrer">@rubzzkitchen on Instagram</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="rk-footer-title">Carteret &amp; Tri-State Service</p>
+          <ul id="rkServiceAreaList" class="rk-footer-links" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem 1rem;"></ul>
+        </div>
+      </div>
+
+      <div class="rk-footer-base">
+        <span>RubzzKitchen &middot; Carteret, New Jersey &middot; 100% Zabiha Halal Scratch Kitchen</span>
+        <span>Advance Notice: 72 Hours for Catering Trays &middot; 7 Days for Styled Grazing Tables</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="rkBagDrawerMount"></div>
+  <div id="rkStatusToast" class="rk-toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="rkLightbox" class="rk-lightbox" aria-labelledby="rkLightboxTitle">
+    <div class="rk-lightbox-inner">
+      <figure class="rk-lightbox-figure">
+        <img id="rkLightboxImg" src="./assets/portfolio/brand-crest.jpg" alt="" />
+      </figure>
+      <div class="rk-lightbox-body">
+        <div>
+          <p id="rkLightboxMeta" class="rk-portfolio-meta"></p>
+          <h3 id="rkLightboxTitle" class="rk-section-title" style="font-size: 1.65rem; margin-bottom: 0.75rem;"></h3>
+          <p id="rkLightboxCaption" class="rk-section-lead"></p>
+        </div>
+        <div class="rk-lightbox-controls">
+          <button id="rkLightboxPrev" class="rk-btn rk-tactile" type="button">Previous</button>
+          <button id="rkLightboxNext" class="rk-btn rk-tactile" type="button">Next</button>
+          <button id="rkLightboxClose" class="rk-btn rk-btn-primary rk-tactile" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="./js/app.js?v=1"></script>
+</body>
+</html>

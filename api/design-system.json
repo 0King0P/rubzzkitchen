@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "name": "RubzzKitchen Culinary & Grazing Atelier",
+  "engine": "Google Stitch Semantic Spec x Monarch XIAS",
+  "defaultTheme": "cardamom-noir",
+  "themes": {
+    "cardamom-noir": {
+      "label": "Candlelit Dawat",
+      "mode": "dark",
+      "tokens": {
+        "--plane-0-void": "oklch(0.115 0.010 45)",
+        "--plane-1-surface": "oklch(0.150 0.012 45)",
+        "--plane-2-card": "oklch(0.185 0.014 45)",
+        "--plane-3-elevated": "oklch(0.225 0.016 45)",
+        "--plane-4-overlay": "oklch(0.265 0.018 45)",
+        "--ink-primary": "oklch(0.95 0.015 80)",
+        "--ink-secondary": "oklch(0.76 0.020 75)",
+        "--ink-muted": "oklch(0.67 0.018 72)",
+        "--accent-brass": "oklch(0.78 0.095 72)",
+        "--accent-brass-hover": "oklch(0.83 0.095 74)",
+        "--accent-ink": "oklch(0.12 0.010 45)",
+        "--color-destructive": "oklch(0.62 0.17 28)"
+      }
+    },
+    "sandstone-daylight": {
+      "label": "Warm Parchment",
+      "mode": "light",
+      "tokens": {
+        "--plane-0-void": "oklch(0.965 0.014 82)",
+        "--plane-1-surface": "oklch(0.940 0.018 80)",
+        "--plane-2-card": "oklch(0.982 0.008 84)",
+        "--plane-3-elevated": "oklch(0.915 0.022 78)",
+        "--plane-4-overlay": "oklch(0.990 0.005 85)",
+        "--ink-primary": "oklch(0.18 0.020 42)",
+        "--ink-secondary": "oklch(0.36 0.022 44)",
+        "--ink-muted": "oklch(0.46 0.020 46)",
+        "--accent-brass": "oklch(0.44 0.095 56)",
+        "--accent-brass-hover": "oklch(0.38 0.095 54)",
+        "--accent-ink": "oklch(0.98 0.008 84)",
+        "--color-destructive": "oklch(0.48 0.17 27)"
+      }
+    }
+  }
+}
